@@ -12,7 +12,13 @@ module.exports = {
         body: ["Poppins", "sans-serif"]
       },
       backgroundColor: {
-        BODY_BG: "#FCFCFF"
+        BODY_BG: "#fffcf1",
+        YELLOW: "#fef5d5"
+      },
+      colors: {
+        MAIN_COLOR: "#fcdc73",
+        DARK_BLUE: "#193948",
+        TEXT_GRAY: "#A2A5BF"
       }
     },
   },

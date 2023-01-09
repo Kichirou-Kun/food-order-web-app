@@ -3,7 +3,7 @@
 }
 
 .sidebar {
-  @apply flex h-full flex-col overflow-y-auto overflow-x-hidden bg-SECONDARY_BG text-base shadow-xl;
+  @apply flex h-full flex-col overflow-y-auto overflow-x-hidden bg-white text-base shadow-xl;
   -webkit-overflow-scrolling: touch !important;
 }
 

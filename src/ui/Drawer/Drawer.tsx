@@ -1,19 +1,25 @@
 import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 import clsx from "clsx";
 import React, { FC, useEffect, useRef } from "react";
+import { useSpring, animated } from "react-spring";
 import s from "./Drawer.module.css";
-import { motion } from "framer-motion";
 
 interface DrawerProps {
   onClose: () => void;
-  position?: "left" | "right" | string;
 }
 
 const Drawer: FC<React.PropsWithChildren<DrawerProps>> = ({
   children,
   onClose,
-  position = "left",
 }) => {
+  const styles = useSpring({
+    from: {
+      x: -500,
+    },
+    to: {
+      x: 1,
+    },
+  });
   const sidebarRef = useRef() as React.MutableRefObject<HTMLDivElement>;
   const contentRef = useRef() as React.MutableRefObject<HTMLDivElement>;
   const onKeyDownSidebar = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -48,20 +54,20 @@ const Drawer: FC<React.PropsWithChildren<DrawerProps>> = ({
       <div className="absolute inset-0 overflow-hidden">
         <div className={s.backdrop} onClick={onClose} />
 
-        <motion.section
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+        <section
           className={clsx(
             "absolute inset-y-0 left-0 flex w-full max-w-full outline-none md:w-auto md:pr-10"
           )}
         >
-          <div className="h-full w-full md:w-screen md:max-w-md">
+          <animated.div
+            style={styles}
+            className="h-full w-full md:w-screen md:max-w-md"
+          >
             <div className={s.sidebar} ref={contentRef}>
               {children}
             </div>
-          </div>
-        </motion.section>
+          </animated.div>
+        </section>
       </div>
     </div>
   );

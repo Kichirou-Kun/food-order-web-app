@@ -45,7 +45,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
   ) => {
     const classes = clsx(
       fullWidth && "w-full",
-      "uppercase rounded font-semibold",
+      "uppercase rounded ",
       disabled &&
         "bg-gray-600 bg-opacity-40 text-gray-400 border-transparent cursor-not-allowed",
       {
