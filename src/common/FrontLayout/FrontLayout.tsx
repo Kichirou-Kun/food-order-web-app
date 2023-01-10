@@ -25,11 +25,11 @@ const FrontLayout: React.FC<PropsWithChildren<Props>> = ({
   NavbarProps,
 }) => {
   return (
-    <div className="bg-BODY_BG">
-      <header className="bg-BODY_BG py-10">
+    <div className="flex flex-col justify-between">
+      <header className="fixed top-0 left-0 w-full ">
         <Navbar {...NavbarProps} />
       </header>
-      <main>{children}</main>
+      <main className="bg-BODY_BG">{children}</main>
       <Footer />
       <SidebarUI />
     </div>

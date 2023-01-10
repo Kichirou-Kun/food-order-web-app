@@ -4,9 +4,6 @@ import Grid from "@ui/Grid";
 import Typography from "@ui/Typography";
 import NextImage from "next/image";
 import React from "react";
-import serve1 from "../../../public/assets/hero/easy-to-order.png";
-import serve2 from "../../../public/assets/hero/fastest-delivery.png";
-import serve3 from "../../../public/assets/hero/best-quality.png";
 import { services } from "@utils/services";
 
 const ServiceSection = () => {

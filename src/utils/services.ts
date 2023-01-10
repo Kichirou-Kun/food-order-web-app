@@ -1,6 +1,6 @@
-import bg1 from "../../public/assets/hero/easy-to-order.png";
-import bg2 from "../../public/assets/hero/fastest-delivery.png";
-import bg3 from "../../public/assets/hero/best-quality.png";
+import bg1 from "../../public/assets/serve/easy-to-order.png";
+import bg2 from "../../public/assets/serve/fastest-delivery.png";
+import bg3 from "../../public/assets/serve/best-quality.png";
 export const services = [
     {
         id: 1,

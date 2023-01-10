@@ -9,7 +9,7 @@ import { PlayIcon } from "@heroicons/react/24/solid";
 
 const HeroBanner = () => {
   return (
-    <section>
+    <section className="py-36">
       <Container>
         <div className="flex flex-col  justify-between gap-10 lg:flex-row lg:gap-4">
           <div className="flex w-full flex-col justify-center lg:w-[55%]">
@@ -30,10 +30,10 @@ const HeroBanner = () => {
               and free delivery.
             </Typography>
             <div className="mt-10 flex flex-row space-x-6">
-              <Button className="bg-MAIN_COLOR font-semibold text-white">
+              <Button className="bg-MAIN_COLOR font-semibold text-white duration-150 ease-linear hover:opacity-90">
                 Get Started
               </Button>
-              <Button className="flex flex-row items-center space-x-2">
+              <Button className="flex flex-row items-center space-x-2 duration-150 ease-linear hover:opacity-90">
                 <div className="flex h-8 w-8 flex-col items-center justify-center rounded-full bg-white shadow">
                   <PlayIcon className="h-6 w-6 text-MAIN_COLOR" />
                 </div>

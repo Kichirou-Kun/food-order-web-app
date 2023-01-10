@@ -4,18 +4,24 @@ import FrontLayout from "@common/FrontLayout";
 import HeroBanner from "@components/HeroBanner";
 import ServiceSection from "@components/ServiceSection";
 import MenuSection from "@components/MenuSection";
+import AboutSection from "@components/AboutSection";
+import FaqSection from "@components/FaqSection";
+import ContactSection from "@components/ContactSection";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <BaseSeo />
       <HeroBanner />
       <ServiceSection />
+      <AboutSection />
       <MenuSection />
+      <FaqSection />
+      <ContactSection />
     </>
   );
 }
 
-Home.getLayout = function getLayout(page: React.ReactElement[]) {
+HomePage.getLayout = function getLayout(page: React.ReactElement[]) {
   return <FrontLayout>{page}</FrontLayout>;
 };

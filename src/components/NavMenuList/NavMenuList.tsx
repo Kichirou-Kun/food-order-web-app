@@ -23,6 +23,8 @@ const NavMenuList = ({ direction = "row" }: NavMenuType) => {
       {direction === "column" && <span className="border-b" />}
       <NavMenu title="MENU" href={PATHS.MENU} />
       {direction === "column" && <span className="border-b" />}
+      <NavMenu title="FAQ" href={PATHS.FAQ} />
+      {direction === "column" && <span className="border-b" />}
       <NavMenu title="CONTACT US" href={PATHS.CONTACT} />
     </Stack>
   );
