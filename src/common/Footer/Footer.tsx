@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="py-10">
+    <footer className="border-t py-10">
       <Container>
         <Typography className="text-center capitalize text-gray-700">
           Copyright © {new Date().getFullYear()} Aung Nyein Htet | All Right

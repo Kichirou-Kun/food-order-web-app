@@ -1,3 +1,4 @@
+import { useUI } from "@context/UIContext/UIContext";
 import { Menu, Transition } from "@headlessui/react";
 import clsx from "clsx";
 import NextLink from "next/link";
@@ -13,7 +14,13 @@ interface Props {
 
 const NavMenu: React.FC<Props> = ({ title, href, subMenus, variant }) => {
   const router = useRouter();
-  const isActive = router.pathname === href;
+  const [isActive, setIsActive] = React.useState(false);
+  const { setCloseSidebar } = useUI();
+  React.useEffect(() => {
+    const path = href === "/" ? "/" : `/${href}`;
+    const isActive = router.asPath === path;
+    setIsActive(isActive);
+  }, [href, router.asPath]);
 
   if (variant === "destop" && subMenus) {
     return (
@@ -40,13 +47,15 @@ const NavMenu: React.FC<Props> = ({ title, href, subMenus, variant }) => {
       </Menu>
     );
   }
-
   return (
     <NextLink href={href} legacyBehavior>
       <a
+        onClick={() => setCloseSidebar()}
         className={clsx(
-          "font-bold uppercase leading-snug transition-colors duration-150 ease-linear",
-          isActive ? "text-MAIN_COLOR" : "text-DARK_BLUE hover:text-MAIN_COLOR "
+          "font-bold uppercase leading-snug text-DARK_BLUE ",
+          isActive
+            ? "text-MAIN_COLOR"
+            : "transition-colors duration-150 ease-linear hover:text-MAIN_COLOR"
         )}
       >
         {title}

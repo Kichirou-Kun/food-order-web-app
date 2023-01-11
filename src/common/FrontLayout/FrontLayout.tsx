@@ -4,6 +4,7 @@ import React, { PropsWithChildren } from "react";
 import Drawer from "@ui/Drawer";
 import Sidebar from "@components/Sidebar";
 import { useUI } from "@context/UIContext/UIContext";
+import CartSidebar from "@components/CartSidebar";
 interface NavbarProps {
   transparent: boolean;
 }
@@ -20,6 +21,16 @@ const SidebarUI = () => {
   ) : null;
 };
 
+const CartSidebarUI = () => {
+  const { openCartSidebar, setCloseCartSidebar } = useUI();
+
+  return openCartSidebar ? (
+    <Drawer onClose={() => setCloseCartSidebar()} position="right">
+      <CartSidebar onClose={() => setCloseCartSidebar()} />
+    </Drawer>
+  ) : null;
+};
+
 const FrontLayout: React.FC<PropsWithChildren<Props>> = ({
   children,
   NavbarProps,
@@ -32,6 +43,7 @@ const FrontLayout: React.FC<PropsWithChildren<Props>> = ({
       <main className="bg-BODY_BG">{children}</main>
       <Footer />
       <SidebarUI />
+      <CartSidebarUI />
     </div>
   );
 };

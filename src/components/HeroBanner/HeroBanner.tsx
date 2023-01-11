@@ -5,19 +5,20 @@ import Typography from "@ui/Typography";
 import NextImage from "next/image";
 import React from "react";
 import bg from "../../../public/assets/hero/hero_image.png";
-import { PlayIcon } from "@heroicons/react/24/solid";
+import { PlayIcon, RocketLaunchIcon } from "@heroicons/react/24/solid";
+import { NEXT_IMAGE_QUALITY } from "@constant/app";
 
 const HeroBanner = () => {
   return (
     <section className="py-36">
       <Container>
-        <div className="flex flex-col  justify-between gap-10 lg:flex-row lg:gap-4">
-          <div className="flex w-full flex-col justify-center lg:w-[55%]">
-            <div>
-              <span className="inline-block rounded-full bg-YELLOW py-2 px-3 text-DARK_BLUE">
-                More than Faster
-              </span>
-            </div>
+        <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-center lg:gap-4">
+          <div className="w-full lg:w-[55%]">
+            <Typography className="inline-block items-center rounded-full bg-YELLOW py-2 px-3 text-DARK_BLUE">
+              More than Faster{" "}
+              <RocketLaunchIcon className="inline-block h-5 w-5" />
+            </Typography>
+
             <Typography
               variant="h1"
               className="my-10 capitalize text-DARK_BLUE"
@@ -44,7 +45,13 @@ const HeroBanner = () => {
             </div>
           </div>
           <div className="flex-1">
-            <NextImage src={bg} alt="" />
+            <NextImage
+              src={bg}
+              alt="Hero Banner Image"
+              className="h-auto w-full object-cover lg:w-5/6"
+              priority
+              quality={NEXT_IMAGE_QUALITY}
+            />
           </div>
         </div>
       </Container>

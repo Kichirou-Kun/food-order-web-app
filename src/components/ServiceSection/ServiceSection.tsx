@@ -5,6 +5,7 @@ import Typography from "@ui/Typography";
 import NextImage from "next/image";
 import React from "react";
 import { services } from "@utils/services";
+import { NEXT_IMAGE_QUALITY } from "@constant/app";
 
 const ServiceSection = () => {
   return (
@@ -25,7 +26,9 @@ const ServiceSection = () => {
                 <NextImage
                   src={service.image}
                   alt="east to pay"
-                  className="h-[150px] w-[150px]  object-cover"
+                  className="h-[150px] w-[150px] object-cover"
+                  priority
+                  quality={NEXT_IMAGE_QUALITY}
                 />
                 <Typography
                   variant="h4"
@@ -33,7 +36,7 @@ const ServiceSection = () => {
                 >
                   {service.title}
                 </Typography>
-                <Typography className="text-center text-lg">
+                <Typography className="text-md text-center">
                   {service.desc}
                 </Typography>
               </div>

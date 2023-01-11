@@ -1,4 +1,5 @@
 import Logo from "@components/Logo";
+import NavActionButtons from "@components/NavActionButtons";
 import NavMenuList from "@components/NavMenuList";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import IconButton from "@ui/IconButton";
@@ -19,6 +20,8 @@ const Sidebar = ({ onClose }: Props) => {
       </header>
       <div className="px-4">
         <NavMenuList direction="column" />
+
+        <NavActionButtons direction="column" size="large" />
       </div>
     </aside>
   );

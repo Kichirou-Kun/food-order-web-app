@@ -5,6 +5,7 @@ import Typography from "@ui/Typography";
 import NextImage from "next/image";
 import img from "../../../public/assets/hero/main_img.png";
 import Button from "@ui/Button";
+import { NEXT_IMAGE_QUALITY } from "@constant/app";
 
 const AboutSection = () => {
   return (
@@ -14,9 +15,15 @@ const AboutSection = () => {
           title="About us"
           text="The Healthy Food For walthy Mood"
         />
-        <div className="flex flex-col items-center justify-between gap-10 lg:flex-row">
-          <div className="w-full lg:w-[55%]">
-            <NextImage src={img} alt="about image" />
+        <div className="flex flex-col items-center justify-between gap-4 lg:flex-row">
+          <div className="flex w-full flex-row items-center justify-center lg:w-[55%]">
+            <NextImage
+              src={img}
+              alt="about image"
+              className="h-auto w-auto lg:h-4/6 lg:w-4/6"
+              quality={NEXT_IMAGE_QUALITY}
+              priority
+            />
           </div>
           <div className="flex-1">
             <Typography variant="h2" className="text-DARK_BLUE">
@@ -35,7 +42,7 @@ const AboutSection = () => {
               odit alias ad sequi.
             </Typography>
             <div className="mt-8">
-              <Button className="bg-MAIN_COLOR text-white transition-all duration-150 hover:opacity-80">
+              <Button className="bg-MAIN_COLOR font-semibold text-white transition-all duration-150 hover:opacity-80">
                 Learn more
               </Button>
             </div>

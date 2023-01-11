@@ -1,3 +1,4 @@
+import { NEXT_IMAGE_QUALITY } from "@constant/app";
 import { PlusIcon } from "@heroicons/react/24/solid";
 import IconButton from "@ui/IconButton";
 import Typography from "@ui/Typography";
@@ -18,7 +19,9 @@ const MealItem = ({ name, id, image, price }: Props) => {
         <NextImage
           src={image}
           alt={name || "The Meal Item"}
-          className="h-[200px] w-full rounded object-cover lg:h-[180px] xl:h-[200px] "
+          className="h-[200px] w-full rounded object-cover lg:h-[180px] xl:h-[200px]"
+          quality={NEXT_IMAGE_QUALITY}
+          priority
         />
       </Link>
       <div className="p-4 lg:p-2">

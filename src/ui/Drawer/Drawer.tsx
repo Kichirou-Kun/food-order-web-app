@@ -6,15 +6,25 @@ import s from "./Drawer.module.css";
 
 interface DrawerProps {
   onClose: () => void;
+  position?: "left" | "right";
 }
 
 const Drawer: FC<React.PropsWithChildren<DrawerProps>> = ({
   children,
   onClose,
+  position = "left",
 }) => {
-  const styles = useSpring({
+  const styleLeft = useSpring({
     from: {
       x: -500,
+    },
+    to: {
+      x: 1,
+    },
+  });
+  const styleRight = useSpring({
+    from: {
+      x: 500,
     },
     to: {
       x: 1,
@@ -56,11 +66,15 @@ const Drawer: FC<React.PropsWithChildren<DrawerProps>> = ({
 
         <section
           className={clsx(
-            "absolute inset-y-0 left-0 flex w-full max-w-full outline-none md:w-auto md:pr-10"
+            "absolute inset-y-0 flex w-full max-w-full outline-none md:w-auto ",
+            {
+              ["left-0 md:pr-10"]: position === "left",
+              ["right-0 md:pl-10"]: position === "right",
+            }
           )}
         >
           <animated.div
-            style={styles}
+            style={position === "left" ? styleLeft : styleRight}
             className="h-full w-full md:w-screen md:max-w-md"
           >
             <div className={s.sidebar} ref={contentRef}>
