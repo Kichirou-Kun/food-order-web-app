@@ -8,6 +8,6 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-BODY_BG font-body;
+    @apply font-body;
   }
 }

@@ -10,7 +10,7 @@ interface Props extends React.ComponentProps<"div"> {
 const Avatar = React.forwardRef<HTMLElement, Props>(
   ({ children, className, component = "div", ...others }, ref) => {
     const classes = clsx(
-      "flex relative w-12 h-12 bg-PRIMARY_BG justify-center items-center text-xl rounded-full text-white",
+      "flex relative w-10 h-10 bg-DARK_BLUE justify-center items-center text-xl rounded-full text-white",
       className
     );
 

@@ -1,5 +1,5 @@
-import MealItem from "@components/MealItem";
 import MenuFilterButton from "@components/MenuFilterButton";
+import MealItem from "@components/MealItem";
 import SectionTitle from "@components/SectionTitle";
 import { meals } from "@constant/dummyData";
 import Container from "@ui/Container";

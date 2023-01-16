@@ -8,7 +8,7 @@ import React from "react";
 
 const ContactSection = () => {
   return (
-    <section className="pt-32" id="contact">
+    <section className="py-32" id="contact">
       <Container>
         <SectionTitle
           text="Maintain your dishes from everywhere"

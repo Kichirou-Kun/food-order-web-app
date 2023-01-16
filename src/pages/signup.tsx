@@ -48,6 +48,7 @@ const SignUpPage = () => {
               </div>
               <div className="flex flex-col gap-4">
                 <Button
+                  type="submit"
                   fullWidth
                   size="large"
                   className="bg-DARK_BLUE text-white duration-150 ease-linear hover:opacity-90"
